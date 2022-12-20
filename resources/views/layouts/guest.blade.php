@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Proyekan') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -19,8 +19,9 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
-                <a href="/">
+                <a href="{{ url('/') }}" class="flex title-font text-5xl font-medium items-center text-gray-900 mb-4 md:mb-0">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <span class="ml-3">Proyek<b class="text-teal-400">an</b></span>
                 </a>
             </div>
 

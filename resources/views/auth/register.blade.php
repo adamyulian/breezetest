@@ -20,11 +20,13 @@
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
+            <div class="flex">
+                <x-text-inputpassword id="password" class="mt-1 w-full"
                             type="password"
                             name="password"
-                            required autocomplete="new-password" />
-
+                            required autocomplete="current-password" />
+                            <span class="fas fa-eye mt-3 text-xl -mx-8 hover:cursor-pointer" onclick="myFunction()"></span>
+            </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -32,10 +34,12 @@
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+            <div class="flex">
+            <x-text-inputpassword  id="password_confirmation" class="block mt-1 w-full"
                             type="password"
                             name="password_confirmation" required />
-
+                            <span class="fas fa-eye mt-3 text-xl -mx-8 hover:cursor-pointer" onclick="myFunctions()"></span>
+            </div>
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
@@ -50,3 +54,22 @@
         </div>
     </form>
 </x-guest-layout>
+
+<script>
+    function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    }
+    function myFunctions() {
+    var x = document.getElementById("password_confirmation");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    }
+</script>

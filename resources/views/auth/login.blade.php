@@ -16,22 +16,20 @@
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-inputpassword id="password" class="block mt-1 w-full"
+            <div class="flex">
+                <x-text-inputpassword id="password" class="mt-1 w-full"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
-                            <div class="ml-64">
-                                <i class="fas fa-eye mt-3 hover:rotate-100 text-sm cursor-pointer" onclick="myFunction()"></i>
-                                <i class="text-sm cursor-pointer" onclick="myFunction()">Show Password</i>
-                            </div>
-
+                            <span class="fas fa-eye mt-3 text-xl -mx-8 hover:cursor-pointer" onclick="myFunction()"></span>
+            </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-teal-600 shadow-sm focus:ring-teal-500" name="remember">
                 <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>

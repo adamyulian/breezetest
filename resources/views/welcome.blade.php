@@ -33,7 +33,7 @@
           <h1 class="title-font font-medium text-3xl text-gray-900">Pekerjaan yang baik tanpa perencanaan hanya akan menjadi sulit.</h1>
           <p class="leading-relaxed mt-4">-Jusuf Kalla, Wakil Presiden ke-10 dan ke-12 Republik Indonesia</p>
         </div>
-        <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
           <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
           <div class="relative mb-4">
             <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>

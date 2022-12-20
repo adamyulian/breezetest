@@ -1,20 +1,30 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<aside class="w-64" aria-label="Sidebar" {{ config('adminlte.classes_sidebar', 'sidebar-dark-primary elevation-4') }}">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
+    {{-- Sidebar brand logo --}}
+    @if(config('adminlte.logo_img_xl'))
+        @include('adminlte::partials.common.brand-logo-xl')
+    @else
+        @include('adminlte::partials.common.brand-logo-xs')
+    @endif
+
+    {{-- Sidebar menu --}}
+    <div class="sidebar">
+        <nav class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+            <ul class="space-y-2 {{ config('adminlte.classes_sidebar_nav', '') }}"
+                data-widget="treeview" role="menu"
+                @if(config('adminlte.sidebar_nav_animation_speed') != 300)
+                    data-animation-speed="{{ config('adminlte.sidebar_nav_animation_speed') }}"
+                @endif
+                @if(!config('adminlte.sidebar_nav_accordion'))
+                    data-accordion="false"
+                @endif>
+                {{-- Configured sidebar links --}}
+                @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')
+            </ul>
+        </nav>
     </div>
 
+</aside>
 
 <aside class="w-64" aria-label="Sidebar">
     <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
@@ -84,5 +94,3 @@
        </ul>
     </div>
  </aside>
-
-</x-app-layout>
