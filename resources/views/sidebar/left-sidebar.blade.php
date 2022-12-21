@@ -2,24 +2,24 @@
 
     {{-- Sidebar brand logo --}}
     @if(config('adminlte.logo_img_xl'))
-        @include('adminlte::partials.common.brand-logo-xl')
+        @include('common.brand-logo-xl')
     @else
-        @include('adminlte::partials.common.brand-logo-xs')
+        @include('common.brand-logo-xs')
     @endif
 
     {{-- Sidebar menu --}}
     <div class="sidebar">
         <nav class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
-            <ul class="space-y-2 {{ config('adminlte.classes_sidebar_nav', '') }}"
+            <ul class="space-y-2 {{ config('app.classes_sidebar_nav', '') }}"
                 data-widget="treeview" role="menu"
-                @if(config('adminlte.sidebar_nav_animation_speed') != 300)
+                @if(config('app.sidebar_nav_animation_speed') != 300)
                     data-animation-speed="{{ config('adminlte.sidebar_nav_animation_speed') }}"
                 @endif
-                @if(!config('adminlte.sidebar_nav_accordion'))
+                @if(!config('app.sidebar_nav_accordion'))
                     data-accordion="false"
                 @endif>
                 {{-- Configured sidebar links --}}
-                @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')
+                @each('sidebar.menu-item', $apps->menu('sidebar'), 'item')
             </ul>
         </nav>
     </div>
